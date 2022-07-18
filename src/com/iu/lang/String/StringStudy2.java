@@ -80,13 +80,14 @@ public class StringStudy2 {
 		//키보드로부터 파일명을 입력 받음, ex) abc.txt , jpg.word
 		//파일이 이미지파일인지 아닌지 구별
 		//확장자가 jpg,png,gif,jpeg,
+		String [] files = {"jpg", "png", "gif", "jpeg"};
 		
 		Scanner sc = new Scanner(System.in);
 		System.out.println("파일명을 입력하시오...");
 		String input = sc.next();
 		System.out.println(input);
 		
-		int dot = input.indexOf(".",0);
+		int dot = input.lastIndexOf(".");
 		System.out.println(". : "+ dot);
 		
 		String title = input.substring(0,dot);
@@ -95,16 +96,23 @@ public class StringStudy2 {
 		String extension = input.substring(dot+1);
 		System.out.println("확장자 : "+ extension);
 		
-		if(extension.equals("jpg")||extension.equals("png")||extension.equals("gif")||extension.equals("jpeg")) {
-			System.out.println("이미지 파일입니다.");
-		}else {
-			System.out.println("이미지 파일이 아닙니다");
-			System.out.println(extension);
+//		if(extension.equals("jpg")||extension.equals("png")||extension.equals("gif")||extension.equals("jpeg")) {
+//			System.out.println("이미지 파일입니다.");
+//		}else {
+//			System.out.println("이미지 파일이 아닙니다");
+//			System.out.println(extension);
+//		}
+		String result = "이미지 파일이 아닙니다";
+		for(int i=0; i<files.length; i++) {
+			if(extension.equals(files[i])) {
+				result="이미지 파일입니다";
+				break;
+			}
 		}
+		System.out.println(result);
+		
+		
 	}
-	
-	
-	
 	
 	
 }
