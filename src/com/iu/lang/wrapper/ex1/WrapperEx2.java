@@ -29,7 +29,12 @@ public class WrapperEx2 {
 		int lastCheck = 0;
 		for(int i=0; i<8;i++) {
 			sum += (jumin2.charAt(i)-'0') * (i+2);
-		}
+		} 
+		//1.String num = String valueOf(ch);
+		//2.int n = Integer.parseInt(num)
+		//  int n = Integer.parseInt(ch+"");
+		//3. int n = Integer.parseInt(String.valueOf(ch));
+		//4. n =Integer.parseInt(String.valueOf(jumin.charAt(0)));
 		for(int i=8; i<12;i++) {
 			sum += (jumin2.charAt(i)-'0') * (i-6);
 		}
